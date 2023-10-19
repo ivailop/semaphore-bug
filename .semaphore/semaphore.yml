@@ -12,14 +12,18 @@ blocks:
         commands: &ref_0
           - checkout
           - printenv
+          - echo $SEMAPHORE_GIT_REPO_SLUG
       jobs:
         - name: 'Job #1'
           commands:
             - printenv
+            - echo $SEMAPHORE_GIT_REPO_SLUG
         - name: 'Job #2'
           commands:
             - printenv
+            - echo $SEMAPHORE_GIT_REPO_SLUG
       epilogue:
         always:
           commands:
             - printenv
+            - echo $SEMAPHORE_GIT_REPO_SLUG
