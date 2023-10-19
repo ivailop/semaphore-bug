@@ -1,0 +1,25 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: 'Block #1'
+    dependencies: []
+    task:
+      prologue:
+        commands: &ref_0
+          - checkout
+          - printenv
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - printenv
+        - name: 'Job #2'
+          commands:
+            - printenv
+      epilogue:
+        always:
+          commands:
+            - printenv
